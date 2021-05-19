@@ -38,7 +38,7 @@ void pagerankOmpOnce(vector<T>& a, const vector<T>& c, const vector<int>& vfrom,
 
 template <class T>
 int pagerankOmpLoop(vector<T>& a, vector<T>& r, const vector<T>& f, vector<T>& c, const vector<int>& vfrom, const vector<int>& efrom, const vector<int>& vdata, int N, T p, T E, int L) {
-  int l = 0;
+  int l = 1;
   T e0 = T();
   for (; l<L; l++) {
     T c0 = pagerankTeleportOmp(r, vfrom, efrom, vdata, N, p);

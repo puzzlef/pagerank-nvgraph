@@ -141,7 +141,7 @@ void copyOmp(T *a, U *x, int N) {
 }
 
 template <class T, class U>
-void copyOmp(vector<T>& a, const vector<T>& x) {
+void copyOmp(vector<T>& a, const vector<U>& x) {
   copyOmp(a.data(), x.data(), int(x.size()));
 }
 
