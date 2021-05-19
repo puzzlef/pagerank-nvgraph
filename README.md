@@ -1,7 +1,7 @@
-Performance of sequential execution based vs [nvGraph] based PageRank (pull, CSR).
+Performance of **OpenMP** based vs [nvGraph] based PageRank (pull, CSR).
 
 This experiment was for comparing the performance between:
-1. Find pagerank using a single thread (**sequential**).
+1. Find pagerank accelerated using **OpenMP**.
 2. Find pagerank using **nvGraph**.
 
 Both methods were attempted on different types of graphs, running each method
