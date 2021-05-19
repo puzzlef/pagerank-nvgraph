@@ -43,7 +43,7 @@ auto vertexData(const G& x, J&& ks, F fn) {
 
 template <class G, class J>
 auto vertexData(const G& x, J&& ks) {
-  return vertexData(x, ks, [&](int u) { return x.vertexData(u) });
+  return vertexData(x, ks, [&](int u) { return x.vertexData(u); });
 }
 
 template <class G>

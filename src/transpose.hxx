@@ -45,28 +45,3 @@ auto transposeWithDegree(const G& x) {
   DiGraph<int, E> a; transposeWithDegree(a, x);
   return a;
 }
-/*
-
-
-
-// TRANSPOSE-FOR-NVGRAPH
-// ---------------------
-
-template <class G, class H>
-void transposeForNvgraph(H& a, G& x) {
-  using V = typename H::TVertex;
-  using E = typename H::TEdge;
-  for (int u : x.vertices())
-    a.addVertex(u, x.degree(u) == 0? V(1) : V(0));
-  for (int u : x.vertices()) {
-    for (int v : x.edges(u))
-      a.addEdge(v, u, E(1)/x.degree(u));
-  }
-}
-
-template <class G>
-auto transposeForNvgraph(G& x) {
-  DiGraph<float, float> a; transposeForNvgraph(a, x);
-  return a;
-}
-*/

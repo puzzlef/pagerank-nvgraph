@@ -25,7 +25,7 @@ auto sourceOffsets(const G& x, J&& ks) {
 
 template <class G>
 auto sourceOffsets(const G& x) {
-  return sourceOffsets(x, x.vertices(), x.order());
+  return sourceOffsets(x, x.vertices());
 }
 
 
@@ -37,7 +37,7 @@ auto sourceOffsets(const G& x) {
 template <class G, class J>
 auto destinationIndices(const G& x, J&& ks) {
   vector<int> a;
-  auto ids = indices(x);
+  auto ids = indices(ks);
   for (int u : ks) {
     for (int v : x.edges(u))
       a.push_back(ids[v]);

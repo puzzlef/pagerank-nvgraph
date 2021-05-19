@@ -33,7 +33,7 @@ PagerankResult<T> pagerankNvgraph(const G& xt, const vector<T> *q=nullptr, Pager
   auto vfrom = sourceOffsets(xt);
   auto efrom = destinationIndices(xt);
   auto vdata = vertexData(xt, ks, [&](int v) { return xt.vertexData(v)==0? T(1) : T(); });
-  auto edata = edgeData(xt, ks, [&](int v, int u) { return T(1)/xt.vertexData(u) });
+  auto edata = edgeData(xt, ks, [&](int v, int u) { return T(1)/xt.vertexData(u); });
   if (q) ranks = compressContainer(xt, *q);
 
   TRY_NVGRAPH( nvgraphCreate(&h) );
@@ -51,10 +51,10 @@ PagerankResult<T> pagerankNvgraph(const G& xt, const vector<T> *q=nullptr, Pager
   TRY_NVGRAPH( nvgraphSetVertexData(h, g, ranks.data(), 1) );
   TRY_NVGRAPH( nvgraphSetEdgeData  (h, g, edata.data(), 0) );
 
-  t = measureDuration([&]() { TRY_NVGRAPH( nvgraphPagerank(h, g, 0, &p, 0, !!q, 1, E, L) ); }, o.repeat);
+  float t = measureDuration([&]() { TRY_NVGRAPH( nvgraphPagerank(h, g, 0, &p, 0, !!q, 1, E, L) ); }, o.repeat);
   TRY_NVGRAPH( nvgraphGetVertexData(h, g, ranks.data(), 1) );
 
   TRY_NVGRAPH( nvgraphDestroyGraphDescr(h, g) );
   TRY_NVGRAPH( nvgraphDestroy(h) );
-  return {decompressContainer(xt, ranks), 0, t};
+  return {decompressContainer(xt, ranks, ks), 0, t};
 }
