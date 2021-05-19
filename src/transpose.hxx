@@ -45,7 +45,7 @@ auto transposeWithDegree(const G& x) {
   DiGraph<int, E> a; transposeWithDegree(a, x);
   return a;
 }
-
+/*
 
 
 
@@ -69,3 +69,4 @@ auto transposeForNvgraph(G& x) {
   DiGraph<float, float> a; transposeForNvgraph(a, x);
   return a;
 }
+*/
