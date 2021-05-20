@@ -1,4 +1,4 @@
-Performance of sequential execution based vs [nvGraph] based PageRank (pull, CSR).
+Performance of sequential execution based vs [nvGraph] based PageRank ([pull], [CSR]).
 
 This experiment was for comparing the performance between:
 1. Find pagerank using a single thread (**sequential**).
@@ -13,11 +13,8 @@ and **sequential** method is higher. This could be because of floating-point
 accuracy issues when generating input for [nvgraphPagerank()] and by the order
 in which calculations are performed on both methods.
 
-See ["pagerank-push-vs-pull"] for a discussion on *push* vs *pull* method, and
-["pagerank-class-vs-csr"] for a comparision between using a C++ DiGraph class
-directly vs using its CSR representation. The input data used for this
-experiment is available at ["graphs"] (for small ones), and the
-[SuiteSparse Matrix Collection].
+The input data used for this experiment is available at ["graphs"] (for small
+ones), and the [SuiteSparse Matrix Collection].
 
 <br>
 
@@ -173,7 +170,7 @@ $ ...
 
 [nvGraph]: https://github.com/rapidsai/nvgraph
 [nvgraphPagerank()]: https://docs.nvidia.com/cuda/archive/10.0/nvgraph/index.html#function-nvgraphpagerank
-["pagerank-push-vs-pull"]: https://github.com/puzzlef/pagerank-push-vs-pull
-["pagerank-class-vs-csr"]: https://github.com/puzzlef/pagerank-class-vs-csr
+[pull]: https://github.com/puzzlef/pagerank-push-vs-pull
+[CSR]: https://github.com/puzzlef/pagerank-class-vs-csr
 ["graphs"]: https://github.com/puzzlef/graphs
 [SuiteSparse Matrix Collection]: https://suitesparse-collection-website.herokuapp.com
