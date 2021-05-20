@@ -1,4 +1,4 @@
-Performance of **OpenMP** based vs [nvGraph] based PageRank (pull, CSR).
+Performance of **OpenMP** based vs [nvGraph] based PageRank ([pull], [CSR]).
 
 This experiment was for comparing the performance between:
 1. Find pagerank accelerated using **OpenMP**.
@@ -11,11 +11,8 @@ use of *GPU* to speed up performance.
 
 Number of threads for this experiment (using `OMP_NUM_THREADS`) was varied
 from `2` to `48`. All outputs are saved in [out/](out/) and outputs for `4`,
-`48` threads are listed here. See ["pagerank-push-vs-pull"] for a discussion
-on *push* vs *pull* method, and ["pagerank-class-vs-csr"] for a comparision
-between using a C++ DiGraph class directly vs using its CSR representation.
-The input data used for this experiment is available at ["graphs"] (for
-small ones), and the [SuiteSparse Matrix Collection].
+`48` threads are listed here. The input data used for this experiment is
+available at ["graphs"] (for small ones), and the [SuiteSparse Matrix Collection].
 
 <br>
 
@@ -307,7 +304,7 @@ $ ...
 [![](https://i.imgur.com/WKtzdoh.jpg)](https://www.youtube.com/watch?v=tIybKX2NKeo)
 
 [nvGraph]: https://github.com/rapidsai/nvgraph
-["pagerank-push-vs-pull"]: https://github.com/puzzlef/pagerank-push-vs-pull
-["pagerank-class-vs-csr"]: https://github.com/puzzlef/pagerank-class-vs-csr
+[pull]: https://github.com/puzzlef/pagerank-push-vs-pull
+[CSR]: https://github.com/puzzlef/pagerank-class-vs-csr
 ["graphs"]: https://github.com/puzzlef/graphs
 [SuiteSparse Matrix Collection]: https://suitesparse-collection-website.herokuapp.com
