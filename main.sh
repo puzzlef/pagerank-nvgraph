@@ -11,7 +11,7 @@ cd $src
 
 # Run
 run() {
-nvcc -std=c++17 -Xcompiler -fopenmp -lnvgraph -O3 main.cxx
+nvcc -std=c++17 -Xcompiler -fopenmp -lnvgraph -O3 main.cu
 echo "OMP_NUM_THREADS=$OMP_NUM_THREADS"                     | tee -a "$out"
 stdbuf --output=L ./a.out ~/data/min-1DeadEnd.mtx      2>&1 | tee -a "$out"
 stdbuf --output=L ./a.out ~/data/min-2SCC.mtx          2>&1 | tee -a "$out"
