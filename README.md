@@ -58,7 +58,7 @@ available on all modern hardware.
 
 
 [![](https://i.imgur.com/WKtzdoh.jpg)](https://www.youtube.com/watch?v=tIybKX2NKeo)
-
+![](https://ga-beacon.deno.dev/G-KD28SG54JQ:hbAybl6nQFOtmVxW4if3xw/github.com/puzzlef/pagerank-nvgraph)
 
 [Prof. Dip Sankar Banerjee]: https://sites.google.com/site/dipsankarban/
 [Prof. Kishore Kothapalli]: https://cstar.iiit.ac.in/~kkishore/
